@@ -109,9 +109,9 @@ jobs:
           bundle exec rake db:create
           bundle exec rake db:schema:load
           bundle exec rake db:test:prepare
-      - name: Run RSpec
+      - name: Run tests
         env:
           RAILS_ENV: test
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/testapp_test
         run: |
-          bundle exec rspec
+          bundle exec rake
